@@ -3,19 +3,18 @@ def anagram(s1, s2):
     if len(s1) != len(s2):
         return False
     
-    for i in range(len(s1)):
-        if s1[i] not in dict:
-            dict[s1[i]] = 1
+    for char in s1:
+        if char in dict:
+            dict[char] += 1
         else:
-            dict[s1[i]] += 1
-            
-    for i in range(len(s2)):
-        if s2[i] not in dict:
-            dict[s2[i]] = -1
-            print s2[i]
-        else:
-            dict[s2[i]] -= 1
-            if dict[s2[i]] < 0:
+            dict[char] = 1
+
+    for char in s2:
+        if char in dict:
+            dict[char] -= 1
+            if dict[char] < 0: 
                 return False
+        else:
+            return False
     return True
     
