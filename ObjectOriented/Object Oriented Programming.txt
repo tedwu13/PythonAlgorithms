@@ -1,25 +1,43 @@
 Object Oriented Programming
 
-class, object (and the difference between the two)
-instantiation
-method (as opposed to, say, a C function)
-virtual method, pure virtual method
-class/static method
-static/class initializer
-constructor
-destructor/finalizer
-superclass or base class
-subclass or derived class
-inheritance
-encapsulation
-multiple inheritance (and give an example)
-delegation/forwarding
-composition/aggregation
-abstract class
-interface/protocol (and different from abstract class)
+Difference between class and object is that 
+Class is written piece of code which is used to define the blueprint which consists of attributes 
+which don't change during the execution of a program
+Object is an instance of a class so it can be destroyed and has a limited timespan
+
+Method- like open() or close() in a class. Instead of data/attributes, it is actually a function within a class
+
+Virtual method, pure virtual method
+Virual method/function is a function where its behavior can be overridden within an inheriting class 
+by same signature
+
+Virtual functions allow a program to call methods that don't necessarily even exist at the moment the code is compiled.
+
+
+Constructor
+A constructor resembles an instance method, but it differs from a method in that it has no explicit return type,
+It is not implicitly implied and constructors often have the same name as the declaring class. 
+They have the task of initializing the object's data members and of establishing the invariant of the class
+
+Destructor
+In object-oriented programming, a destructor  is a method which is automatically invoked when the object is destroyed.
+
+
+Base class
+Derived class
+Inheritance
+Encapsulation
+Multiple inheritance (and give an example)
+Delegation and forwarding
+Composition and Aggregation
+
+Abstract class
+Interface 
 method overriding
-method overloading (and difference from overriding)
-polymorphism (without resorting to examples)
+method overloading
+Difference between method overriding and method overloading
+
+Polymorphism (without resorting to examples)
 is-a versus has-a relationships (with examples)
-method signatures (what's included in one)
-method visibility (e.g. public/private/other)
+Method signatures (what's included in one)
+Method visibility (e.g. public/private/other)
