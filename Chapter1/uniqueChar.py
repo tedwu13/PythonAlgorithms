@@ -21,4 +21,12 @@ def isUniqueChar2(inputString):
 def isUniqueChar3(inputString):
     if len(inputString) > 256:
         return False
+    else:
+        charList = [False] * 256
+        for char in charList:
+            if charList[ord(char)] == True:
+                return False
+            else:
+                charList[ord(char)] = True
+    return True
     
