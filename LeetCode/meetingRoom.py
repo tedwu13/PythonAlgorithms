@@ -13,7 +13,5 @@ def canAttendMeetings(intervals):
                 return False
         return True
     
-
-    
 print canAttendMeetings([[0,30],[5,10],[15, 16]])
                        
