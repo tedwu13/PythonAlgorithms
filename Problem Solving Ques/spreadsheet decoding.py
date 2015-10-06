@@ -1,15 +1,14 @@
-decoding.py
 def spreadsheet_decoding(str)
-    if str is null, return
-
+    if len(string) == 0:
+        return 
     value = 0
-    str.each_char do |c|
-        value = value * 26 + c - 'A' + 1
-    end
-end
+    for char in string:
+        value = value * 26 + char - 'A' + 1
+    return value
 
 
-def encoding(num)
+def spreadsheet_encoding(num):
+    
   return '' if num == 0
 
   result = ''
