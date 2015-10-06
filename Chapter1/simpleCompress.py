@@ -12,7 +12,7 @@ def compressString(string):
                 charCount = 1
         lastChar = char
     
-    #final write
+    #final write to the outputString
     outputString.append(lastChar + str(charCount))
     output = ''.join(outputString)
     
@@ -24,6 +24,4 @@ def compressString(string):
 print compressString("aaaabccccccaa")
 print compressString("abc")
 
-#print a4b1c6a2
-#print a1b1c1
             
