@@ -15,5 +15,3 @@ def strobogrammaticNumber(self, nums):
             left_pointer += 1
             right_pointer -= 1
     return True
-
-    
