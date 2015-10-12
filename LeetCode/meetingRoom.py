@@ -1,4 +1,3 @@
-
 # Definition for an interval.
 class Interval:
     def __init__(self, s=0, e=0):
@@ -6,8 +5,7 @@ class Interval:
         self.end = e
         
 def canAttendMeetings(intervals):
-        intervals.sort(key=lambda x: x.start)
-    
+        intervals.sort() # you have to sort the intervals by start    
         for i in xrange(1, len(intervals)):
             if intervals[i].start < intervals[i-1].end:
                 return False
