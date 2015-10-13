@@ -1,4 +1,4 @@
-def wordPatter(patter, string):
+def wordPattern(pattern, string):
     
 
 print wordPattern("abab", "dog cat dog cat")
