@@ -28,4 +28,15 @@ def zeroProcess(matrix):
 def zeroProcess(matrix):
     rowCount = []
     colCount = []
-    for i in range(matrix)
+    for i in range(len(row)):
+        for j in range(len(col)):
+            if matrix[i][j] == 0:
+                rowCount.append(i)
+                colCount.append(j)
+    for row in rowCount:
+        for c in range(0,col):
+            matrix[row][c] = 0
+    for col in colCount: 
+        for r in range(0,row):
+            matrix[r][col] = 0
+    return matrix
