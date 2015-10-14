@@ -21,7 +21,10 @@ def compressString(string):
     else:
         return output
     print output
+
 print compressString("aaaabccccccaa")
 print compressString("abc")
+
+
 
             

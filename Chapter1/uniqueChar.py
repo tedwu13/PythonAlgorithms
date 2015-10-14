@@ -19,6 +19,7 @@ def isUniqueChar2(inputString):
             charList.append(char)
 
 def isUniqueChar3(inputString):
+    # the reason why you want to use ord(char) is to conver "A" to 95
     if len(inputString) > 256:
         return False
     else:

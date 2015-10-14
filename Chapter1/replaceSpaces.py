@@ -5,6 +5,8 @@ def replaceSpaces(string):
         if char == ' ':
             char = '%20'
             charList.append(char)
+        else:
+            charList.append(char)
 
     return ''.join(charList)
 
