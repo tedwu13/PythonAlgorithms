@@ -1,7 +1,6 @@
 def rob(nums):
     if len(nums) == 0:
         return 0
-
     dp = []
     dp[0] = 0 
     dp[1] = num[0]

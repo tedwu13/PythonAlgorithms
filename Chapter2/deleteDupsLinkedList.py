@@ -15,18 +15,40 @@ def deleteDupLinkedList(head):
 
 
 def deleteDupLinkedList(head):
+    currentNode = head
+    dict = { currentNode.next = True}
 
-
-# use a dictionary to keep track of all the elements in the linked lists
+    if currentNode.next == None:
+        return head
+    while currentNode.next != None or currentNode != None:
+        if dict[currentNode.val] == True: 
+            currentNode.next = currentNode.next.next
+        else:
+            dict[currentNode.val] = True
+            currentNode = currentNode.next
 
 def deleteDupLinkedList(head):
-    currentNode = head
-    while currentNode != None or currentNode.next!= None:
-        runnerNode = currentNode
-        while runnerNode.next != None:
-            if runnerNode == runnerNode.next:
-                runnerNode = runnerNode.next.next
+    #if you cannot use a dictionary to keep track of the linked lists
+    current = head
+    while current != None or current.next != None:
+        runner = current
+        while runner.next != None:
+            if runner == runner.next:
+                runner.next = runner.next.next
             else:
-                runnerNode = runnerNode.next
+                runner = runner.next
     return head
-    
+
+def betterDeleteDupLinkedList(head):
+    # add a check 
+    if head == None:
+        return 
+    elif head.next == None:
+        return head
+
+    current = head
+    while current != None or current.next != None:
+        if current == current.next:
+            current.next = current.next.next
+        else:
+            current = current.next
