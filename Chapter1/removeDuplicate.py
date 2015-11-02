@@ -7,10 +7,22 @@ def removeDuplicate(arr):
 dupDictionary = {}
 output = []
 
+
 for i in range(len(arr)):
     element = arr[i]
     if not dupDictionary[element]:
-        output.add[element]
+        output.append(element)    
         dupDictionary[element] = True
 return output
 
+# [1,1,2,3,4,5]
+# output = [1,2,3,4,5]
+def removeDup(arr):
+    dupDictionary = {}
+    output = [] 
+    for i in range(len(arr)):
+        element = arr[i]
+        if not dupDictionary[element]:
+            dupDictionary[element] = True
+            output.append(element)
+    return output

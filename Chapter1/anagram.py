@@ -1,5 +1,5 @@
 def anagram(s1, s2):
-    dict={}
+    dict = {}
     #check the lengths 
     if len(s1) != len(s2):
         return False
