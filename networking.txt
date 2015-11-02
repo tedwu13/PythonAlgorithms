@@ -6,9 +6,6 @@ Table of Contents
 The "g" key is pressed
 The "enter" key bottoms out
 Interrupt fires [NOT for USB keyboards]
-(On Windows) A WM_KEYDOWN message is sent to the app
-(On OS X) A KeyDown NSEvent is sent to the app
-(On GNU/Linux) the Xorg server listens for keycodes
 Parse URL
 Is it a URL or a search term?
 Check HSTS list
@@ -26,8 +23,6 @@ CSS interpretation
 Page Rendering
 GPU Rendering
 Window Server
-Post-rendering and user-induced execution
-The "g" key is pressed
 
 With a key press from the keyboard (serves as an input) Virtual keyboard raises an interrupt for sending key pressed message back to the OS which
 transfers to kernel mode. Keyboard sends signals to interrupt request line which maps to an interrupt vector by a controller.The CPU uses the Interrupt Descriptor Table (IDT) 
@@ -36,18 +31,13 @@ When an interrupt arrives, the CPU indexes the IDT with the interrupt vector and
 Thus, the kernel is entered.
 
 Parse URL
-
-The browser now has the following information contained in the URL (Uniform Resource Locator):
-
+-The browser now has the following information contained in the URL (Uniform Resource Locator):
 Protocol "http"
 Use 'Hyper Text Transfer Protocol'
 
-Resource "/"
-Retrieve main (index) page
 
 Is it a URL or a search term?
-
-When no protocol or valid domain name is given the browser proceeds to feed the text given in the address box to the browser's default web search engine. In many cases the url has a special piece of text appended to it to tell the search engine that it came from a particular browser's url bar.
+-When no protocol or valid domain name is given the browser proceeds to feed the text given in the address box to the browser's default web search engine. In many cases the url has a special piece of text appended to it to tell the search engine that it came from a particular browser's url bar.
 
 Check HSTS list
 
@@ -65,6 +55,8 @@ gethostbyname checks if the hostname can be resolved by reference in the local h
 If gethostbyname does not have it cached nor can find it in the hosts file then it makes a request to the DNS server configured in the network stack. This is typically the local router or the ISP's caching DNS server.
 If the DNS server is on the same subnet the network library follows the ARP process below for the DNS server.
 If the DNS server is on a different subnet, the network library follows the ARP process below for the default gateway IP.
+
+
 ARP process
 
 In order to send an ARP broadcast the network stack library needs the target IP address to look up. It also needs to know the MAC address of the interface it will use to send out the ARP broadcast.
@@ -292,8 +284,4 @@ During the rendering process the graphical computing layers can use general purp
 When using GPU for graphical rendering computations the graphical software layers split the task into multiple pieces, so it can take advantage of GPU massive parallelism for float point calculations required for the rendering process.
 Window Server
 
-Post-rendering and user-induced execution
 
-After rendering has completed, the browser executes JavaScript code as a result of some timing mechanism (such as a Google Doodle animation) or user interaction (typing a query into the search box and receiving suggestions). Plugins such as Flash or Java may execute as well, although not at this time on the Google homepage. Scripts can cause additional network requests to be performed, as well as modify the page or its layout, causing another round of page rendering and painting.
-Status API Training Shop Blog About Pricing
-© 2015 GitHub, Inc. Terms Privacy Security Contact Help
