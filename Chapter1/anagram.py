@@ -1,5 +1,6 @@
 def anagram(s1, s2):
     dict={}
+    #check the lengths 
     if len(s1) != len(s2):
         return False
     
@@ -11,10 +12,15 @@ def anagram(s1, s2):
 
     for char in s2:
         if char in dict:
-            dict[char] -= 1
-            if dict[char] < 0: 
+            if dict[char] == 0: 
                 return False
+            dict[char] -= 1
         else:
             return False
     return True
     
+
+
+#anagram 
+
+print anagram("abba", "baba")

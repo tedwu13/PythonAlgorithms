@@ -12,6 +12,13 @@ def deleteDupLinkedList(head):
             dict[currentNode.next.val] = True
             currentNode = currentNode.next
 
+
+
+def deleteDupLinkedList(head):
+
+
+# use a dictionary to keep track of all the elements in the linked lists
+
 def deleteDupLinkedList(head):
     currentNode = head
     while currentNode != None or currentNode.next!= None:

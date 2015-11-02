@@ -13,6 +13,16 @@ def partition(head, x):
     end.next = None
     return head
 
+linked list 
 
-    
+1->22->33->14->5->6
+x = 6
+1->5->6->14->22->33
+
+
+
+
+
+
+
 
