@@ -1,11 +1,8 @@
 What happens when you type google.com
 
-
-Table of Contents
-
 The "g" key is pressed
 The "enter" key bottoms out
-Interrupt fires [NOT for USB keyboards]
+Interrupt fires 
 Parse URL
 Is it a URL or a search term?
 Check HSTS list
@@ -37,17 +34,15 @@ Use 'Hyper Text Transfer Protocol'
 
 
 Is it a URL or a search term?
--When no protocol or valid domain name is given the browser proceeds to feed the text given in the address box to the browser's default web search engine. In many cases the url has a special piece of text appended to it to tell the search engine that it came from a particular browser's url bar.
+-When no protocol or valid domain name is given the browser proceeds to feed the text given in the address box to the browser's default web search engine.
+In many cases the url has a special piece of text appended to it to tell the search engine that it came from a particular browser's url bar.
 
 Check HSTS list
 
 The browser checks its "preloaded HSTS (HTTP Strict Transport Security)" list. This is a list of websites that have requested to be contacted via HTTPS only.
-If the website is in the list, the browser sends its request via HTTPS instead of HTTP. Otherwise, the initial request is sent via HTTP. (Note that a website can still use the HSTS policy without being in the HSTS list. The first HTTP request to the website by a user will receive a response requesting that the user only send HTTPS requests. However, this single HTTP request could potentially leave the user vulnerable to a downgrade attack, which is why the HSTS list is included in modern web browsers.)
-Convert non-ASCII Unicode characters in hostname
+If the website is in the list, the browser sends its request via HTTPS instead of HTTP. 
 
 The browser checks the hostname for characters that are not in a-z, A-Z, 0-9, -, or ..
-Since the hostname is google.com there won't be any, but if there were the browser would apply Punycode encoding to the hostname portion of the URL.
-DNS lookup
 
 Browser checks if the domain is in its cache.
 If not found, the browser calls gethostbyname library function (varies by OS) to do the lookup.

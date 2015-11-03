@@ -7,8 +7,8 @@ def isBalanced(root):
 
 
 
-
 def checkHeight(root):
     if root == None:
         return 0
+    
     
