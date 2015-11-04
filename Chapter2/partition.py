@@ -14,9 +14,6 @@ def partition(head, x):
     return head
 
 
-1->22->33->14->5->6
-x = 6
-1->5->6->14->22->33
 
 
 
