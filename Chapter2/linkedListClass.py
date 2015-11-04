@@ -1,8 +1,3 @@
-#linked list
-
-# 1-3-2-3
-# 1-3-2
-
 class ListNode(object):
     def __init__(self, x):
         self.val = x
@@ -22,5 +17,3 @@ def printLinkList(head):
         print head.val
         head = head.next
         
-    
-printLinkList(node1)
