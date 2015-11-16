@@ -1,6 +1,5 @@
 def deleteDupLinkedList(head):
     currentNode = head
-
     dict = { currentNode.val: True}
 
     if currentNode.next == None:

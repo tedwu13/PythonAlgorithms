@@ -1,7 +1,7 @@
 def findBeginning(head):
     current = head
     runner = head
-
+`
     while runner != None or runner.next != None:
         current = current.next
         runner = runner.next.next
