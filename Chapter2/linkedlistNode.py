@@ -28,9 +28,21 @@ def printRemovedNode(head, value):
 
 
 def getRandomNode(head):
+    k = 2
+    returned = head
+
+    while head != None:
+        if randomProbability(k):
+            returned = head
+        else:
+            head = head.next
+            k = k + 1
+    return returned
 
 
 def randomProbability(k):
     #return true if it is probablity 1/k
-    random = random.randomInt(1,k)
-    if()
+    random = random.randInt(0,k-1)
+    if random % k == 0:
+        return True
+
