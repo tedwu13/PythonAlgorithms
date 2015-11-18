@@ -14,6 +14,22 @@ def getMode(nums):
         for currentNum in nums:
             if currentNum == prevNum:
                 count += 1
-            if count > maxCount
+            if count > maxCount:
                 maxCount = count
-                
+                mode = currentNum
+            #reset for the next iteration
+            if currentNum != prevNum:
+                count = 1
+            prevNum = currentNum
+    return mode
+
+def getMode(nums):
+    if len(nums) == 0:
+        return None
+    elif len(nums) == 1:
+        return nums[0]
+
+    hash = {}
+
+    for num in nums:
+        
