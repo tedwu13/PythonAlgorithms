@@ -29,7 +29,16 @@ def getMode(nums):
     elif len(nums) == 1:
         return nums[0]
 
-    hash = {}
-
+    dict = {}
+    count = 0
+    max_count = None
     for num in nums:
-        
+        if num in dict:
+            count += 1
+            if count > max_count:
+                max_count = count
+        else:
+
+
+
+

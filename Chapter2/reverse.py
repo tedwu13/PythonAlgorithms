@@ -1,13 +1,13 @@
-def reverse(n):
-    last = None
-    current = n
-    while(current is not None):
-    nxt = current.nxt
-    current.nxt = last
-    last = current
-    current = nxt
-    return last
+#Reverse a linked list
 
-#reverse a linked list
+def reverse(head):
+    prev = None
+
+    while current != None:
+        current = head
+        next = current.next
+        current.next = prev
+        prev = None
+    return head
 
 
