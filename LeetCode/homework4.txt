@@ -1,0 +1,17 @@
+1. Explain the difference and similarities between programmed I/O and DMA approaches 
+for doing I/O from the OS perspective.
+
+2. Explain how starvation can appears in the context of disk scheduling 
+and describe one of the commonly used algorithms that avoid this.
+
+
+3. Use strace and stat to illustrate the difference between soft and hard links.
+
+
+4. In many UNIX systems, the i-nodes are kept at the start of the disk. An alternative design 
+is to allocate an i-node when a file is created and put the i-node at the st-rat of the first 
+block of the file. Discuss the pros and cons of this alternative.
+
+
+5. How does the Fast File System try to optimize storage utilization and file system performance over the traditional UNIX file system? Briefly explain your answer.
+6. List and briefly discuss at least two of the observations that motivated the work on Log-Structured File systems.

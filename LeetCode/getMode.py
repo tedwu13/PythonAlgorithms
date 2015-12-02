@@ -1,5 +1,3 @@
-[1,2,3,2,2,2,2,2,2,2]
-return 2
 def getMode(nums):
     if len(nums) == 0:
         return None
