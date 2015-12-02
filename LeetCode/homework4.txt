@@ -1,17 +1,50 @@
 1. Explain the difference and similarities between programmed I/O and DMA approaches 
 for doing I/O from the OS perspective.
 
+The similarities between programmed I/O and DMA approaches from OS perspective are that kernel makes the I/O 
+operations illegal to execute. Also both approaches are capable of executing commands/instructions in addition to transferring the data.
+
+The differences btween programmed I/O and DMA approaches are that DMA approaches allow authority to read/write
+from main memory directly while the programmed I/O uses polling technique to check the hardware item and the I/O device.
+Programmed I/O is a lot more inefficient and slow compared to DMA approaches since DMA provides capabilitity to carry out memory 
+specific operations without intervention. DMA controller just transfers the data to the I/O device directly. 
+Programmed I/O also does not rely on interrupts compared to DMA which uses 1 interrupt after the entire block has been transferred.
+
 2. Explain how starvation can appears in the context of disk scheduling 
 and describe one of the commonly used algorithms that avoid this.
+Starvation can appear in shortest seek time first because request is based on the next shortest distance.
+There is a good chance the starvation happens because there are lots of requests close to each other and some other requests 
+that have a larger distance will never be handled since the processes will keep on choosing the request that has shortest distance. 
 
+One of the commonly used algorithms for disk scheduling would be C-LOOK which is an enhanced version of C-SCAN. The scanning begins toward the nearest end and works all the way 
+to the end of the system. C Look sees any requests that is in the direction of the head movement then the disk head traversal will go as far as the final requeust of the head movement and then
+reverse direction without going all the way to the end. The C Look behaves like the shortest seek time first but avoids the starvation problem because C-LOOK 
+is biased against area that is recently traversed and favors tracks clustered at the outermost and inntermost of the platter. 
 
 3. Use strace and stat to illustrate the difference between soft and hard links.
-
+The difference between a soft link and a hard link is that a soft link is a file that has information/pointer to another file or inode. The inode then points to
+the data on the hard drive. Hard link is the direct pointer to the original inode of original file. Hard link points to the original file inode rather than a soft link inode and the original file inode will then point to data on the hard disk.
+You can use stat to figure out how many hard links a file contains. For example if you run stat filename.file | grep inode, yoy can get the results of how many hard links that file contains. 
+Running the command (stat foo.file) also allows you to access the id of device, inode number, user id, grop id, and the size of the file. 
+You can use strace in order to debug and see the output of what's actually happening when you create a soft/hard link. You can use strace to see how to remove files (strace rm foo2) which basically
+unlinks the file. 
 
 4. In many UNIX systems, the i-nodes are kept at the start of the disk. An alternative design 
-is to allocate an i-node when a file is created and put the i-node at the st-rat of the first 
+is to allocate an i-node when a file is created and put the i-node at the start of the first 
 block of the file. Discuss the pros and cons of this alternative.
 
 
-5. How does the Fast File System try to optimize storage utilization and file system performance over the traditional UNIX file system? Briefly explain your answer.
+5. How does the Fast File System try to optimize storage utilization and file system performance over the traditional UNIX file system? 
+Briefly explain your answer.
+Fast File system uses a different organization and policy to reduce the disk arm motion. The disk is divided into cylinder groups. The blocks that are likely to be accessed are in 
+sequential orer so performance can be improved. For directories, a Fast file system will find a low number of allocated directories and put data and i-nodes in that group. 
+For files, allocated data blocks and i nodes are in the same group with all the files in the same cylinder group so it is faster to access and find. 
+Also with the fast file system, it has larger block sizes for performance and two block sizes to optimize. storage utilization 
+
+
 6. List and briefly discuss at least two of the observations that motivated the work on Log-Structured File systems.
+Two observations that motivated the work of log structured file system is that one, memory sizes were growing on modern computers so that the I/O will become more write heavy since
+reads would be cached more in memory so disk traffic would increasingly consist of writes. Another thing is a growing gap between
+random and sequential I/O performance since the transfer bandwith increases 10x faster than seek/rotational costs decreases therefore one gets a huge performance advantage which grows over time. 
+Existing file systems also perform poorly on many common workloads. Log structured file system use less number of writes to create a file. It would use many short seeks and subsequent rotational delays.
+Also Log structured file systems are RAID aware which eliminates the small write problem where one logical write to a block causes 4 physical I/Os to take place for RAID 4. 
